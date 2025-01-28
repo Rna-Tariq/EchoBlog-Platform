@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #4a90e2;
+    --primary-hover-color: #0056b3;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --text-light-color: #777;
+    --border-color: #ddd;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+.feed {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.feed form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feed form textarea {
+    width: 95%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    background-color: white;
+    color: var(--text-color);
+}
+
+.feed form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.file-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.file-input-container input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.custom-file-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+    text-align: center;
+}
+
+.custom-file-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.file-name {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.post-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.post-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+@media (max-width: 768px) {
+    .feed {
+        padding: 15px;
+    }
+
+    .feed form textarea {
+        height: 100px;
+        font-size: 14px;
+    }
+
+    .custom-file-button,
+    .post-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feed {
+        padding: 10px;
+    }
+
+    .feed form textarea {
+        height: 80px;
+        font-size: 12px;
+    }
+
+    .custom-file-button,
+    .post-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
