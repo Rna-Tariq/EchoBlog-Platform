@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #4a90e2;
+    --primary-hover-color: #0056b3;
+    --background-color: #ffffff;
+    --text-color: #333;
+    --border-color: #ddd;
+    --border-radius: 5px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.home-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color var(--transition-speed) ease;
+    margin-right: -10px;
+}
+
+.home-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.search-container {
+    flex: 1;
+    margin: 0 1rem;
+    max-width: 400px;
+}
+
+.profile-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 2px solid var(--primary-color);
+    transition: transform var(--transition-speed) ease;
+    margin-left: 28px;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-icon .default-avatar {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.profile-icon-container:hover .profile-icon {
+    transform: scale(1.1);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+}
+
+.profile-icon-container:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu button {
+    background-color: transparent;
+    border: none;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.dropdown-menu button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .home-button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .search-container {
+        margin: 0 0.5rem;
+        max-width: 300px;
+    }
+
+    .profile-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .dropdown-menu {
+        top: 40px;
+        min-width: 120px;
+    }
+
+    .dropdown-menu button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .home-button {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+
+    .search-container {
+        margin: 0 0.25rem;
+        max-width: 200px;
+    }
+
+    .profile-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .dropdown-menu {
+        top: 35px;
+        min-width: 100px;
+    }
+
+    .dropdown-menu button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+}
